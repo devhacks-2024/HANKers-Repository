@@ -1,0 +1,13 @@
+#!/bin/sh
+
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+SHA1=$3
+
+# Get the current branch name, and extract the part up to the first underscore character
+branch=$(git branch --show-current | cut -d '_' -f 1)
+
+# Extract only the part after the final '/'
+# branch=$(git branch --show-current | awk -F/ '{print $NF}' | cut -d '_' -f 1)
+
+printf "[$branch]: $(cat $COMMIT_MSG_FILE)" > $1
