@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2360450838192221053, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2360450838192221053, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2930837581610517343, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: m_Name
       value: Player (1) Variant 1
