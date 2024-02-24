@@ -64,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
        
 
         Debug.Log($"MoveInput is {moveInput}");
-      //rigidbody2D.velocity = moveSpeed * moveInput;
    }
 
    // Used by `Invoke Unity Events`
