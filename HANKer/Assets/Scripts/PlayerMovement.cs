@@ -1,12 +1,15 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Shooter))]
 public class PlayerMovement : MonoBehaviour
 {
    [SerializeField] private float moveSpeed = 0;
+
+    PhotonView view;
 
     private const float ZERO_VELOCITY = 0.001f;
     private const float BREAKS_FACTOR = 1.1f;
@@ -39,7 +42,8 @@ public class PlayerMovement : MonoBehaviour
    // Use for broader initialization using properties of other objects cached in Awake()
    void Start ()
    {
-   }
+        view = GetComponent<PhotonView>();
+    }
 
    // Update is called once per frame
    void Update ()
@@ -64,22 +68,25 @@ public class PlayerMovement : MonoBehaviour
     // Used by `Invoke Unity Events`
     public void OnMove(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>();
-
-        if (moveInput != Vector2.zero)
+        if (view.IsMine)
         {
-            direction = moveInput;
+            moveInput = context.ReadValue<Vector2>();
+
+            if (moveInput != Vector2.zero)
+            {
+                direction = moveInput;
+            }
+            //Debug.Log($"MoveInput is zero {moveInput == Vector2.zero}");
+
+
+            //Debug.Log($"OnMove (InputAction) {moveInput}");
         }
-        //Debug.Log($"MoveInput is zero {moveInput == Vector2.zero}");
-
-
-        //Debug.Log($"OnMove (InputAction) {moveInput}");
     }
 
    // Used by `Invoke Unity Events`
    public void Fire (InputAction.CallbackContext context)
    {
-      if (context.started == true)
+      if (view.IsMine && context.started == true)
       {
          shooter.Shoot(direction);
       }      
