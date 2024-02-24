@@ -7,6 +7,15 @@ public class PlayerHand
 {
     public static int HAND_LIMIT = 4;
 
-    Card[] cards = new Card[HAND_LIMIT];
+    List<Card> cards = new List<Card>();
 
+    public void Add(Card card)
+    {
+        cards.Add(card);
+    }
+
+    public void Remove(Card card)
+    {
+        cards.Remove(card);
+    }
 }

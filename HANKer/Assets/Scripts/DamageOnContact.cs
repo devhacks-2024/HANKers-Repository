@@ -18,13 +18,7 @@ namespace Assets.Scripts
       {
          if (collision.gameObject.TryGetComponent<HealthWrapper>(out var health))
          {
-            Debug.Log("found health");
-
             health.Value.TakeDamage(Damage);
-         }
-         else
-         {
-            Debug.Log("no health found");
          }
       }
    }
