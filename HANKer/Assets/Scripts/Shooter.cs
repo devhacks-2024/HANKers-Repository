@@ -8,10 +8,16 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerMovement))]
 public class Shooter : MonoBehaviour
 {
+   [Header("Projectile")]
    [SerializeField] Projectile projectile = null;
-   [SerializeField] ParticleSystem fireEffect = null;
    [SerializeField] int damage;
    [SerializeField] float cooldownTime;
+
+   [Header("Effects")]
+   [SerializeField] ParticleSystem fireEffect = null;
+   [SerializeField] Transform aimIndicator = null;
+   [SerializeField] float aimDistance = 5.0f;
+
 
    float cooldown = 0;
 
@@ -54,8 +60,6 @@ public class Shooter : MonoBehaviour
             cooldown = cooldownTime;
          }
       }
-
-      
    }
 
    public void OnLook (InputAction.CallbackContext context)
@@ -66,6 +70,12 @@ public class Shooter : MonoBehaviour
          var worldPos = cam.ScreenToWorldPoint(pos);
 
          lookInput = (worldPos - transform.position).normalized;
+
+
+         if (aimIndicator)
+         {
+            aimIndicator.transform.position = transform.position + (Vector3)lookInput;
+         }
       }      
    }
 }

@@ -18,26 +18,6 @@ public class Card
         this.Type = CardType.None;
         this.Color = CardColor.None;
     }
-
-    public void SetColor(CardColor color)
-    {
-        this.Color = color;
-    }
-
-    public void SetType(CardType type)
-    {
-        this.Type = type;
-    }
-
-    public CardType GetCardType()
-    {
-        return this.Type;
-    }
-
-    public CardColor GetColor()
-    {
-        return this.Color;
-    }
 }
 
 public enum CardType

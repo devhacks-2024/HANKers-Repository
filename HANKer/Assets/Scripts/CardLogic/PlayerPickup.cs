@@ -26,7 +26,7 @@ public class PlayerPickup : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var cardEntered = collision.gameObject.GetComponent<CardDisplay>();
-        var card = collision.gameObject.GetComponent<CardDisplay>().card;
+        var card = collision.gameObject.GetComponent<CardDisplay>().Card;
 
 
         if (cardEntered != null)

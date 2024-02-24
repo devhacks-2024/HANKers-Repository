@@ -8,16 +8,16 @@ public class CardDisplay : MonoBehaviour
     [SerializeField] CardsConfig config;
 
 
-    Card card;
+    public Card Card { get; set; }
 
     public void SetCard(Card card)
     {
-        this.card = card;
+        Card = card;
 
         var sr = GetComponent<SpriteRenderer>();
 
-        sr.sprite = config.GetSpriteFromCardType(card.GetCardType());
-        sr.color = config.GetColorFromCardColor(card.GetColor());
+        sr.sprite = config.GetSpriteFromCardType(card.Type);
+        sr.color = config.GetColorFromCardColor(card.Color);
     }
 
 
