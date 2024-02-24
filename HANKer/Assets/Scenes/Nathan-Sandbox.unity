@@ -918,8 +918,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3136986301286625150, guid: 52910ca1f59b21147b1d6210d0130fae, type: 3}
-  minX: -23
-  maxX: -20
+  minX: 20
+  maxX: 23
   minY: 0
   maxY: 0
 --- !u!4 &432171130
