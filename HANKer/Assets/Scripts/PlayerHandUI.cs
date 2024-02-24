@@ -1,30 +1,31 @@
 ﻿using System.Collections.Generic;
 
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
    public class PlayerHandUI : MonoBehaviour
    {
+      [SerializeField] PlayerEnum player;
       [SerializeField] List<CardSlotUI> slots = new List<CardSlotUI>();
       
 
-      
-   }
-
-
-   public class CardSlotUI : MonoBehaviour
-   {
-      [SerializeField] Image image;
-      [SerializeField] CardsConfig config;
-
-
-
-      void Set(Card card)
+      private void Start ()
       {
-         image.sprite = config.GetSpriteFromCardType(card.Type);
-         image.color = config.GetColorFromCardColor(card.Color);
+         Init(CardManager.Instance.GetPlayerHand(player));
+      }
+
+      public void Init (PlayerHand playerHand)
+      {
+         playerHand.OnHandChanged += PlayerHand_OnHandChanged;
+      }
+
+      private void PlayerHand_OnHandChanged (PlayerHand obj)
+      {
+         for (int i = 0; i < slots.Count; i++)
+         {
+            slots[i].Set(obj.Cards[i] ?? new Card());
+         }
       }
    }
 }
