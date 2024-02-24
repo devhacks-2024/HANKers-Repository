@@ -119,7 +119,7 @@ Transform:
   m_GameObject: {fileID: 2930837581610517343}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5199985311306256952}
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myself: 0
+  autoPickup: 1
 --- !u!114 &6317072753115919053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +316,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 3be97a00-140e-4f7e-8082-3af3071fc828
     m_ActionName: Player/Pickup[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -2631129208151448193}
+        m_TargetAssemblyTypeName: PlayerPickup, Assembly-CSharp
+        m_MethodName: IncrementDiscardIndex
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a5150949-427b-4c83-9dd7-7c77af85f75c
+    m_ActionName: Player/ChangeDiscard[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

@@ -30,17 +30,16 @@ public class CardManager
 
    public PlayerHand GetPlayerHand(PlayerEnum player)
    {
-      return playerHands[player];
-   }
 
-   public void AddCardToHand(PlayerEnum player, Card card)
-   {
-      GetPlayerHand(player).Add(card);
+      Debug.Log($"GetPlayerHand: ({player})");
+
+      playerHands.TryGetValue(player, out PlayerHand hand);
+      return hand;
    }
 
    public void Discard(Card card)
    {
-
+      Deck.AddCard(card);
    }
 
 

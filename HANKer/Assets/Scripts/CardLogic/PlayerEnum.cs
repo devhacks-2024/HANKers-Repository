@@ -1,7 +1,7 @@
 ﻿public enum PlayerEnum
 {
-   P1 = 1,
-   P2 = 2
+   P1 = 0,
+   P2 = 1
 }
 
 
