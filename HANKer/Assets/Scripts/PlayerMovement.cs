@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
    // Use for local initialization (GetComponent)
    private void Awake ()
    {
-      Debug.Log("Awake");
       rigidbody2D = GetComponent<Rigidbody2D>();
       shooter = GetComponent<Shooter>();
    }
@@ -29,26 +28,22 @@ public class PlayerMovement : MonoBehaviour
    // Use for subscribing to events
    private void OnEnable ()
    {
-      Debug.Log("OnEnable");
    }
 
    // Use for un-subscribing to events
    private void OnDisable ()
    {
-      Debug.Log("OnDisable");
    }
 
    // Start is called before the first frame update
    // Use for broader initialization using properties of other objects cached in Awake()
    void Start ()
    {
-      Debug.Log("Start");
    }
 
    // Update is called once per frame
    void Update ()
    {
-      Debug.Log("Update");
    }
 
    private void FixedUpdate ()
@@ -66,15 +61,15 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log($"MoveInput is {moveInput}");
    }
 
-   // Used by `Invoke Unity Events`
-   public void OnMove (InputAction.CallbackContext context)
-   {
-      moveInput = context.ReadValue<Vector2>();
+    // Used by `Invoke Unity Events`
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
 
-      if (moveInput != Vector2.zero)
-      {
-         direction = moveInput;
-      }
+        if (moveInput != Vector2.zero)
+        {
+            direction = moveInput;
+        }
         //Debug.Log($"MoveInput is zero {moveInput == Vector2.zero}");
 
 
@@ -87,7 +82,6 @@ public class PlayerMovement : MonoBehaviour
       if (context.started == true)
       {
          shooter.Shoot(direction);
-         Debug.Log("Fire");
       }      
    }
 }
