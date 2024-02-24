@@ -9,6 +9,9 @@ public class PlayerHand
 {
    public const int HAND_LIMIT = 4;
 
+
+   public PlayerEnum Player;
+
    public List<Card> Cards { get; private set; } = new List<Card>();
 
 
@@ -17,6 +20,10 @@ public class PlayerHand
    public event Action<PlayerHand> OnHandChanged;
    public event Action<PlayerHand> OnDiscardIndexChanged;
 
+   public PlayerHand (PlayerEnum player)
+   {
+      Player = player;
+   }
 
    public void Add (Card card)
    {

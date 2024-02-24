@@ -1,8 +1,11 @@
+using TMPro;
+
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class WinChecker : MonoBehaviour
 {
+   [SerializeField] GameObject canvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +32,10 @@ public class WinChecker : MonoBehaviour
 
       if (win)
       {
+         var x = Instantiate(canvas);
 
+         var text = x.GetComponentInChildren<TextMeshProUGUI>();
+         text.text = $"Player {(obj.Player == PlayerEnum.P1 ? "1" : "2")} Wins";
       }
    }
 }

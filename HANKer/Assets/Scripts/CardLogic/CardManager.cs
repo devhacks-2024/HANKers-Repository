@@ -10,21 +10,16 @@ public class CardManager
 
    public CardDeck Deck { get; } = CardDeck.CreateFullDeck();
 
-   public PlayerHand hand1 = new PlayerHand();
-   public PlayerHand hand2 = new PlayerHand();
-
-   public PlayerHand playingField = new PlayerHand();
-
 
    private Dictionary<PlayerEnum, PlayerHand> playerHands = new Dictionary<PlayerEnum, PlayerHand>
    {
       {
          PlayerEnum.P1,
-         new PlayerHand()
+         new PlayerHand(PlayerEnum.P1)
       },
       {
          PlayerEnum.P2,
-         new PlayerHand()
+         new PlayerHand(PlayerEnum.P2)
       }
    };
 
