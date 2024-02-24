@@ -43,13 +43,25 @@ PrefabInstance:
       propertyPath: m_Actions
       value: 
       objectReference: {fileID: -944628639613478452, guid: f9c2238dc54be6741b4e79fb2f3b1f91, type: 3}
+    - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
+      value: 3be97a00-140e-4f7e-8082-3af3071fc828
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
+      value: Player/Pickup[/Keyboard/space]
+      objectReference: {fileID: 0}
     - target: {fileID: 5637614044024042752, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5637614044024042752, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5637614044024042752, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: m_LocalPosition.y

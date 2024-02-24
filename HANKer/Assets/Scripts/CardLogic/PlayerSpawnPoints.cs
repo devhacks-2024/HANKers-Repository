@@ -1,13 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+
 using UnityEngine;
 
-public class PlayerSpawnPoints : MonoBehaviour
+public class PlayerSpawnPoints : SpawnPoints
 {
-
-    [SerializeField] List<Transform> spawnPoints = new List<Transform>();
-
-
-
 }
 
 

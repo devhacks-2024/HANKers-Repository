@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             rigidbody2D.velocity += direction;
        
 
-        Debug.Log($"MoveInput is {moveInput}");
+        //Debug.Log($"MoveInput is {moveInput}");
    }
 
     // Used by `Invoke Unity Events`
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log($"MoveInput is zero {moveInput == Vector2.zero}");
 
 
-        Debug.Log($"OnMove (InputAction) {moveInput}");
+        //Debug.Log($"OnMove (InputAction) {moveInput}");
     }
 
    // Used by `Invoke Unity Events`
