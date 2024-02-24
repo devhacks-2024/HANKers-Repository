@@ -1,10 +1,6 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-
-public class CardSpawnPoints : MonoBehaviour
+﻿public class CardSpawnPoints : SpawnPoints
 {
 
-    [SerializeField] List<Transform> spawnPoints = new List<Transform>();
 
 
 

@@ -9,15 +9,18 @@ public class Card
 
     public Card(CardType type, CardColor color)
     {
-        this.Type = type;
-        this.Color = color;
+        Type = type;
+        Color = color;
     }
 
     public Card()
     {
-        this.Type = CardType.None;
-        this.Color = CardColor.None;
     }
+
+   public override string ToString ()
+   {
+      return $"Card: {{{Type}, {Color}}}";
+   }
 }
 
 public enum CardType
