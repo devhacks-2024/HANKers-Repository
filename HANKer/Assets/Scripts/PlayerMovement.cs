@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
    // Used by `Invoke Unity Events`
    public void Fire (InputAction.CallbackContext context)
    {
-      if (context.started == true)
+      if (view.IsMine && context.started == true)
       {
          shooter.Shoot(direction);
       }      
