@@ -9,7 +9,7 @@ public class PlayerHand
 {
    public const int HAND_LIMIT = 4;
 
-   List<Card> cards = new List<Card>();
+   public List<Card> Cards { get; private set; } = new List<Card>();
 
 
    int nextToDelete = 3;
@@ -17,20 +17,24 @@ public class PlayerHand
    public event Action<PlayerHand> OnHandChanged;
 
 
+
+
+
+
    public void Add (Card card)
    {
-      if (cards.Count == HAND_LIMIT)
+      if (Cards.Count == HAND_LIMIT)
       {
-         var discard = cards[nextToDelete];
+         var discard = Cards[nextToDelete];
 
 
-         cards[nextToDelete] = card;
+         Cards[nextToDelete] = card;
 
          CardManager.Instance.Discard(discard);
       }
       else
       {
-         cards.Add(card);
+         Cards.Add(card);
       }
 
       OnHandChanged?.Invoke(this);
@@ -38,12 +42,14 @@ public class PlayerHand
 
    public void RemoveRandom()
    {
-      if (cards.Count > 0)
+      if (Cards.Count > 0)
       {
-         var discard = cards.RemoveRandom();
+         var discard = Cards.RemoveRandom();
          CardManager.Instance.Discard(discard);
 
          OnHandChanged?.Invoke(this);
       }
    }
+
+
 }

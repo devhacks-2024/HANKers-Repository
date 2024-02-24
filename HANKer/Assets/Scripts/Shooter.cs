@@ -17,7 +17,8 @@ public class Shooter : MonoBehaviour
    [SerializeField] ParticleSystem fireEffect = null;
    [SerializeField] Transform aimIndicator = null;
    [SerializeField] float aimDistance = 5.0f;
-
+    
+    private AudioSource gunshotAudio; 
 
    float cooldown = 0;
 
@@ -27,7 +28,8 @@ public class Shooter : MonoBehaviour
 
    private void Start ()
    {
-      cam = FindObjectOfType<Camera>();
+        gunshotAudio = GetComponent<AudioSource>();
+        cam = FindObjectOfType<Camera>();
    }
 
    private void Update ()
@@ -49,7 +51,7 @@ public class Shooter : MonoBehaviour
    {
       var proj = Instantiate(projectile, transform.position, transform.rotation);
       proj.Fire(direction, damage);
-
+        gunshotAudio.Play();
 
       if (fireEffect)
       {

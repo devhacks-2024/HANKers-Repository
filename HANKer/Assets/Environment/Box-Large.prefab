@@ -75,10 +75,10 @@ LineRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Positions:
-  - {x: 4, y: 4, z: 0}
-  - {x: 4, y: -4, z: 0}
-  - {x: -4, y: -4, z: 0}
-  - {x: -4, y: 4, z: 0}
+  - {x: 3, y: 3, z: 0}
+  - {x: 3, y: -3, z: 0}
+  - {x: -3, y: -3, z: 0}
+  - {x: -3, y: 3, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.2
@@ -158,5 +158,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.2, y: 8.2}
+  m_Size: {x: 6.2, y: 6.2}
   m_EdgeRadius: 0
