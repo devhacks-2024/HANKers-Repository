@@ -10,6 +10,12 @@ public class LineCollider : MonoBehaviour
 
    private void Awake ()
    {
+      SetPolygonColiderPointers();
+   }
+
+   [ContextMenu("SetPolygonColliderPointers")]
+   private void SetPolygonColiderPointers ()
+   {
       var line = GetComponent<LineRenderer>();
       var poly = GetComponent<PolygonCollider2D>();
 
@@ -18,6 +24,8 @@ public class LineCollider : MonoBehaviour
 
       poly.points = points.Select(x => (Vector2)x).ToArray();
    }
+
+
 
 
    // Start is called before the first frame update
