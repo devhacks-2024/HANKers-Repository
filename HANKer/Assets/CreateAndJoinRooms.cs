@@ -29,6 +29,6 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     //once we join a room
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("Kalen-Sandbox");
+        PhotonNetwork.LoadLevel("Nathan-Sandbox");
     }
 }
