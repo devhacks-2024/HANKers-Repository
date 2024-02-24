@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardManager : MonoBehaviour
+public class CardManager
 {
+
+    public static CardManager Instance { get; set; } = new CardManager();
+
 
     public CardDeck gameDeck = new CardDeck();
 
