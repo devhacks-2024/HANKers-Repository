@@ -23,6 +23,7 @@ public class Shooter : MonoBehaviour
 
    Camera cam;
    Vector2 lookInput;
+   Vector2 mousePosition;
 
    private void Start ()
    {
@@ -34,6 +35,13 @@ public class Shooter : MonoBehaviour
       if (cooldown > 0)
       {
          cooldown -= Time.deltaTime;
+      }
+
+      lookInput = (mousePosition - (Vector2)transform.position).normalized;
+
+      if (aimIndicator)
+      {
+         aimIndicator.transform.position = (Vector2)transform.position + (aimDistance * lookInput);
       }
    }
 
@@ -67,15 +75,8 @@ public class Shooter : MonoBehaviour
       if (context.performed)
       {
          var pos = context.ReadValue<Vector2>();
-         var worldPos = cam.ScreenToWorldPoint(pos);
+         mousePosition = cam.ScreenToWorldPoint(pos);
 
-         lookInput = ((Vector2)(worldPos - transform.position)).normalized;
-
-
-         if (aimIndicator)
-         {
-            aimIndicator.transform.position = (Vector2)transform.position + (aimDistance * lookInput);
-         }
       }      
    }
 }
