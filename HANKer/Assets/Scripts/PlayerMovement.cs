@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,7 +6,10 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Shooter))]
 public class PlayerMovement : MonoBehaviour
 {
-   [SerializeField] private float moveSpeed = 10;
+   [SerializeField] private float moveSpeed = 0;
+
+    private const float ZERO_VELOCITY = 0.001f;
+    private const float BREAKS_FACTOR = 1.1f;
 
    new Rigidbody2D rigidbody2D;
 
@@ -49,7 +53,18 @@ public class PlayerMovement : MonoBehaviour
 
    private void FixedUpdate ()
    {
-      rigidbody2D.velocity = moveSpeed * moveInput;
+        if (moveInput == Vector2.zero)
+            if (rigidbody2D.velocity.magnitude < ZERO_VELOCITY)
+                rigidbody2D.velocity = Vector2.zero;
+            else
+                rigidbody2D.velocity /= BREAKS_FACTOR;
+
+        else
+            rigidbody2D.velocity += direction;
+       
+
+        Debug.Log($"MoveInput is {moveInput}");
+      //rigidbody2D.velocity = moveSpeed * moveInput;
    }
 
    // Used by `Invoke Unity Events`
@@ -61,9 +76,11 @@ public class PlayerMovement : MonoBehaviour
       {
          direction = moveInput;
       }
+        //Debug.Log($"MoveInput is zero {moveInput == Vector2.zero}");
 
-      Debug.Log($"OnMove (InputAction) {moveInput}");
-   }
+
+        Debug.Log($"OnMove (InputAction) {moveInput}");
+    }
 
    // Used by `Invoke Unity Events`
    public void Fire (InputAction.CallbackContext context)
