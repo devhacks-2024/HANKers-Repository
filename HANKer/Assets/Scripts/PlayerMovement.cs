@@ -46,13 +46,13 @@ public class PlayerMovement : MonoBehaviour
    void Start ()
    {
       Debug.Log("Start");
-        view = GetComponent<PhotonView>();
+      view = GetComponent<PhotonView>();
    }
 
    // Update is called once per frame
    void Update ()
    {
-      Debug.Log("Update");
+        Debug.Log("Update");
    }
 
    private void FixedUpdate ()
