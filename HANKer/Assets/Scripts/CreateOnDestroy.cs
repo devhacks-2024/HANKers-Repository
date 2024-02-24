@@ -4,7 +4,18 @@ public class CreateOnDestroy : MonoBehaviour
 {
    [SerializeField] GameObject effect = null;
 
+
+   private void OnDisable ()
+   {
+      CreateEffect();
+   }
+
    private void OnDestroy ()
+   {
+      
+   }
+
+   void CreateEffect()
    {
       if (effect != null)
       {
