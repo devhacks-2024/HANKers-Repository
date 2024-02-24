@@ -18,15 +18,11 @@ public class PlayerHand
 
 
 
-
-
-
    public void Add (Card card)
    {
       if (Cards.Count == HAND_LIMIT)
       {
          var discard = Cards[nextToDelete];
-
 
          Cards[nextToDelete] = card;
 
@@ -51,5 +47,10 @@ public class PlayerHand
       }
    }
 
-
+   public Card GetCard(int index)
+   {
+      return index < 0 || index >= Cards.Count
+         ? new Card()
+         : Cards[index];
+   }
 }

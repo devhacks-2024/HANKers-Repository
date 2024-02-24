@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerPickup : MonoBehaviour
 {
@@ -38,13 +39,16 @@ public class PlayerPickup : MonoBehaviour
 
 
    // called by Unity Event in PlayerInput
-   void Pickup ()
+   public void Pickup (InputAction.CallbackContext context)
    {
-      if (hovering != null)
+      if (context.performed)
       {
-         CardManager.Instance.GetPlayerHand(myself).Add(hovering.Card);
-         Destroy(hovering.gameObject);
-      }
+         if (hovering != null)
+         {
+            CardManager.Instance.GetPlayerHand(myself).Add(hovering.Card);
+            Destroy(hovering.gameObject);
+         }
+      }      
    }
 }
 

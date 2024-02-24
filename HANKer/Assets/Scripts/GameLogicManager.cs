@@ -44,9 +44,6 @@ namespace Assets.Scripts
       {
          var card = FindFirstObjectByType<CardDisplay>();
 
-         Debug.Log(card);
-
-
          if (card == null)
          {
             SpawnCards();
