@@ -1,76 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class PlayerPickup : MonoBehaviour
 {
-    CardDisplay cardDisplay;
-    Card cardValue;
-
-    [SerializeField] Player myself;
+   [SerializeField] PlayerEnum myself;
 
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        var cardEntered = collision.gameObject.GetComponent<CardDisplay>();
-        var card = collision.gameObject.GetComponent<CardDisplay>().Card;
+   CardDisplay hovering;
 
 
-        if (cardEntered != null)
-        {
-            cardDisplay = cardEntered;
-            cardValue = card;
-        }
+   private void OnTriggerEnter2D (Collider2D collision)
+   {
+      //var cardEntered = collision.gameObject.GetComponent<CardDisplay>();
+      var card = collision.gameObject.GetComponent<CardDisplay>();
 
-    }
+      if (card != null)
+      {
+         hovering = card;
+      }
+   }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        var cardExited = collision.gameObject.GetComponent<CardDisplay>();
+   private void OnTriggerExit2D (Collider2D collision)
+   {
+      var card = collision.gameObject.GetComponent<CardDisplay>();
+
+      //var cardExited = collision.gameObject.GetComponent<CardDisplay>();
+
+      if (card != null && hovering == card)
+      {
+         hovering = null;
+      }
+   }
 
 
-        if (cardExited != null && cardExited == cardDisplay)
-        {
-            cardDisplay = null;
-            cardValue = null;
-        }
-    }
-
-
-
-    void Pickup()
-    {
-        if(cardDisplay != null)
-        {
-            if(myself == Player.One)
-            {
-                CardManager.Instance.Player1PickUp(cardValue);
-            }
-            else
-            {
-                CardManager.Instance.Player2PickUp(cardValue);
-            }
-        }
-    }
-
-    public enum Player
-    {
-        One = 1,
-        Two = 2
-    }
+   // called by Unity Event in PlayerInput
+   void Pickup ()
+   {
+      if (hovering != null)
+      {
+         CardManager.Instance.GetPlayerHand(myself).Add(hovering.Card);
+         Destroy(hovering.gameObject);
+      }
+   }
 }
 
 

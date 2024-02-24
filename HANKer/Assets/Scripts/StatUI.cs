@@ -24,8 +24,6 @@ public class StatUI : MonoBehaviour
 
    private void Health_OnHealthChanged (Stat health)
    {
-      Debug.Log($"Health_OnHealthChanged: {health.Current}");
-      
       slider.value = health.Current;
    }
 }

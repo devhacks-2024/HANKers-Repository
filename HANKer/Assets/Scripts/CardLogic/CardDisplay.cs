@@ -12,15 +12,11 @@ public class CardDisplay : MonoBehaviour
    {
       Card = card;
 
+      card.State = CardState.World;
+
       var sr = GetComponent<SpriteRenderer>();
 
       sr.sprite = config.GetSpriteFromCardType(card.Type);
       sr.color = config.GetColorFromCardColor(card.Color);
-   }
-
-   // Start is called before the first frame update
-   void Start ()
-   {
-      SetCard(Card);
    }
 }

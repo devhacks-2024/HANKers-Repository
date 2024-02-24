@@ -17,5 +17,14 @@ namespace Assets.Scripts
       {
          return list[Random.Range(0, list.Count)];
       }
+
+      public static T RemoveRandom<T> (this List<T> list)
+      {
+         var x = list[Random.Range(0, list.Count)];
+
+         list.Remove(x);
+
+         return x;
+      }
    }
 }

@@ -12,18 +12,26 @@ namespace Assets.Scripts
 {
    public class GameLogicManager : MonoBehaviour
    {
-      [Header("Prefabs")]
+      [Header("Player 1")]
       [SerializeField] GameObject player1Prefab = null;
+      [SerializeField] PlayerModelViewConfig p1Config = null;
+
+      [Header("Player 2")]
+
       [SerializeField] GameObject player2Prefab = null;
+      [SerializeField] PlayerModelViewConfig p2Config = null;
+
+      [Header("Cards")]
       [SerializeField] CardDisplay cardDisplayPrefab = null;
 
       [Header("Spawn Points")]
       [SerializeField] PlayerSpawnPoints playerSpawnPoints = null;
       [SerializeField] CardSpawnPoints cardSpawnPoints = null;
 
-
       static Transform p1;
       static Transform p2;
+
+
 
 
       private void Start ()
@@ -35,6 +43,9 @@ namespace Assets.Scripts
       private void Update ()
       {
          var card = FindFirstObjectByType<CardDisplay>();
+
+         Debug.Log(card);
+
 
          if (card == null)
          {
@@ -61,15 +72,16 @@ namespace Assets.Scripts
 
       void SpawnPlayers ()
       {
-
          var positions = playerSpawnPoints.Positions;
 
          p1 = Instantiate(player1Prefab).transform;
          p1.position = positions[0];
+         p1Config.Connect(p1.gameObject);
+
 
          p2 = Instantiate(player2Prefab).transform;
          p2.position = positions[1];
-
+         p2Config.Connect(p2.gameObject);
       }
 
       bool NotNearPlayers(Vector2 v)
@@ -79,31 +91,7 @@ namespace Assets.Scripts
 
       void SpawnCards ()
       {
-
-         Debug.Log("Card Positions");
-         var positions = cardSpawnPoints.Positions;
-
-         positions = positions.Where(NotNearPlayers).ToList();
-
-
-
-         var cards = new List<Card>
-         {
-            new Card(CardType.Square, CardColor.White),
-            new Card(CardType.Square, CardColor.Green),
-            new Card(CardType.Square, CardColor.Blue),
-            new Card(CardType.Square, CardColor.Red),
-
-            new Card(CardType.Diamond, CardColor.White),
-            new Card(CardType.Diamond, CardColor.Green),
-            new Card(CardType.Diamond, CardColor.Blue),
-            new Card(CardType.Diamond, CardColor.Red),
-
-            new Card(CardType.Circle, CardColor.White),
-            new Card(CardType.Circle, CardColor.Green),
-            new Card(CardType.Circle, CardColor.Blue),
-            new Card(CardType.Circle, CardColor.Red)
-         };
+         var positions = cardSpawnPoints.Positions.Where(NotNearPlayers).ToList();
 
          List<List<Vector2>> lists = new List<List<Vector2>>
          {
@@ -113,44 +101,15 @@ namespace Assets.Scripts
             positions.Where(x => x.x > 0).ToList()
          };
 
-         //var leftPositions    = positions.Where(x => x.x < 0).ToList();
-         //var rightPositions   = positions.Where(x => x.x > 0).ToList();
-         //var topPositions     = positions.Where(x => x.x > 0).ToList();
-         //var bottomPositions  = positions.Where(x => x.x > 0).ToList();
-
-         //var v = GetRandom(leftPositions);
-
          foreach(var l in lists)
          {
             var v = l.RandomElement();
 
             positions.Remove(v);
 
-            SpawnCard(cards.RandomElement(), v);
+            SpawnCard(CardManager.Instance.Deck.GetCard(), v);
          }
-
-
-
-         //for (int i = 0; i < 2; i++)
-         //{
-         //   int index = 0;
-
-         //   while (index == 0)
-         //   {
-         //      index = UnityEngine.Random.Range(0, positions.Count);
-
-         //      if (positions[index].x >= 0)
-         //      {
-         //         index = 0;
-         //      }
-         //   }
-
-
-         //   SpawnCard(card, positions[index]);
-         //   positions.RemoveAt(index);
-         //}
       }
-
 
       void SpawnCard(Card card, Vector2 position)
       {
@@ -159,15 +118,6 @@ namespace Assets.Scripts
          cardDisplay.transform.position = position;
 
          cardDisplay.SetCard(card);
-
       }
-
-
-      Vector2 GetRandom(List<Vector2> list)
-      {
-         return list[UnityEngine.Random.Range(0, list.Count)];
-      }
-
-
    }
 }

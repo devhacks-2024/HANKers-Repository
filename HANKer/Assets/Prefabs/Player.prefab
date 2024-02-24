@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj:
     max: 100
-    start: 100
+    start: 50
     min: 0
 --- !u!114 &5283073969896242350
 MonoBehaviour:
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e132655e40c474e9c452b40c7e499c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 0.1
   healAmount: 1
 --- !u!212 &5039213316018130213
 SpriteRenderer:
