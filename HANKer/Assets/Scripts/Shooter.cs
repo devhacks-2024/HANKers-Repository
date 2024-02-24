@@ -69,12 +69,12 @@ public class Shooter : MonoBehaviour
          var pos = context.ReadValue<Vector2>();
          var worldPos = cam.ScreenToWorldPoint(pos);
 
-         lookInput = (worldPos - transform.position).normalized;
+         lookInput = ((Vector2)(worldPos - transform.position)).normalized;
 
 
          if (aimIndicator)
          {
-            aimIndicator.transform.position = transform.position + (Vector3)lookInput;
+            aimIndicator.transform.position = (Vector2)transform.position + (aimDistance * lookInput);
          }
       }      
    }
