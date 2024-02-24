@@ -90,7 +90,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2930837581610517343, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
   m_PrefabInstance: {fileID: 2848671011673655780}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3804821305113815538
+--- !u!114 &6774894758304207221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,7 +142,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 3804821305113815538}
+  - {fileID: 6774894758304207221}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
