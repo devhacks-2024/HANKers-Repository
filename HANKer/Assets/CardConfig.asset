@@ -13,26 +13,26 @@ MonoBehaviour:
   m_Name: CardConfig
   m_EditorClassIdentifier: 
   typeConfigs:
-  - cardType: 0
+  - cardType: -1
     sprite: {fileID: 1790401003, guid: ed614001e91ab3248983cbff7559265f, type: 3}
-  - cardType: 1
+  - cardType: 0
     sprite: {fileID: 204988464, guid: ed614001e91ab3248983cbff7559265f, type: 3}
-  - cardType: 2
+  - cardType: 1
     sprite: {fileID: 1526651953, guid: ed614001e91ab3248983cbff7559265f, type: 3}
-  - cardType: 3
+  - cardType: 2
     sprite: {fileID: -134398627, guid: ed614001e91ab3248983cbff7559265f, type: 3}
-  - cardType: 4
+  - cardType: 3
     sprite: {fileID: 218685744, guid: ed614001e91ab3248983cbff7559265f, type: 3}
-  - cardType: 5
+  - cardType: 4
     sprite: {fileID: -1418410974, guid: ed614001e91ab3248983cbff7559265f, type: 3}
   colorConfigs:
-  - cardColor: 0
+  - cardColor: -1
     color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
-  - cardColor: 1
+  - cardColor: 0
     color: {r: 1, g: 1, b: 1, a: 1}
-  - cardColor: 2
+  - cardColor: 1
     color: {r: 1, g: 0, b: 0, a: 1}
-  - cardColor: 3
+  - cardColor: 2
     color: {r: 0, g: 1, b: 0.052033424, a: 1}
-  - cardColor: 4
+  - cardColor: 3
     color: {r: 0, g: 0.025922537, b: 1, a: 1}
