@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1810800670381130587}
+  - component: {fileID: 3233197643003323481}
   - component: {fileID: 1810800670381130585}
-  - component: {fileID: 8820282442165844057}
+  - component: {fileID: 7611708283123063675}
   m_Layer: 0
   m_Name: Trapezoid-Outline-Medium
   m_TagString: Untagged
@@ -33,6 +34,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3233197643003323481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810800670381130591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d08fdf17cf61d9449ec47cb389e8416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!120 &1810800670381130585
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -138,8 +151,8 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 1
---- !u!61 &8820282442165844057
-BoxCollider2D:
+--- !u!60 &7611708283123063675
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -161,6 +174,10 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.2, y: 4.2}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.18953705, y: -1.1655765}
+      - {x: -5.801445, y: 1.8850034}
+      - {x: -2.1007845, y: -2.0919523}
+      - {x: 2.0376067, y: -2.1235409}
+      - {x: 5.8014445, y: 1.8850044}
