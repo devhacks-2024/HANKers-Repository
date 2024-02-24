@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3233197643003323481}
   - component: {fileID: 1810800670381130585}
   - component: {fileID: 7611708283123063675}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trapezoid-Outline-Medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
