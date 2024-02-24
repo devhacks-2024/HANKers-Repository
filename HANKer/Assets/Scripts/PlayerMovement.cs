@@ -1,11 +1,18 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Shooter))]
 public class PlayerMovement : MonoBehaviour
 {
+
+
+
+
    [SerializeField] private float moveSpeed = 10;
+
+   PhotonView view;
 
    new Rigidbody2D rigidbody2D;
 
@@ -39,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
    void Start ()
    {
       Debug.Log("Start");
+        view = GetComponent<PhotonView>();
    }
 
    // Update is called once per frame
@@ -55,15 +63,19 @@ public class PlayerMovement : MonoBehaviour
    // Used by `Invoke Unity Events`
    public void OnMove (InputAction.CallbackContext context)
    {
-      moveInput = context.ReadValue<Vector2>();
+        if (view.IsMine)
+        {
 
-      if (moveInput != Vector2.zero)
-      {
-         direction = moveInput;
-      }
+            moveInput = context.ReadValue<Vector2>();
 
-      Debug.Log($"OnMove (InputAction) {moveInput}");
-   }
+            if (moveInput != Vector2.zero)
+            {
+                direction = moveInput;
+            }
+
+            Debug.Log($"OnMove (InputAction) {moveInput}");
+        }
+    }
 
    // Used by `Invoke Unity Events`
    public void Fire (InputAction.CallbackContext context)
