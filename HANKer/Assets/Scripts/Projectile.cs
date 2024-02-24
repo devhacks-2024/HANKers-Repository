@@ -11,8 +11,9 @@ public class Projectile : MonoBehaviour
 {
    [SerializeField] private float speed = 100;
 
-   public void Fire(Vector2 direction)
+   public void Fire(Vector2 direction, int damage)
    {
       GetComponent<Rigidbody2D>().velocity = direction * speed;
+      GetComponent<DamageOnContact>().Damage = damage;
    }
 }

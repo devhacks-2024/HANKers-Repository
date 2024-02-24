@@ -6,22 +6,14 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
    [SerializeField] Projectile projectile = null;
+   [SerializeField] ParticleSystem fireEffect = null;
    [SerializeField] int damage;
 
    public void Shoot(Vector2 direction)
    {
-      var proj = Instantiate(projectile);
+      var proj = Instantiate(projectile, transform.position, transform.rotation);
+      proj.Fire(direction, damage);
 
-      proj.transform.position = transform.position;
-
-      var damageOnContact = proj.GetComponent<DamageOnContact>();
-
-      Debug.Log($"Shooter.Shoot {tag}");
-
-
-      damageOnContact.Damage = damage;
-      damageOnContact.IgnoreTag = tag;
-
-      proj.Fire(direction);
+      Instantiate(fireEffect, transform.position, transform.rotation);
    }
 }
