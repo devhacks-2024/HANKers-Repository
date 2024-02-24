@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1810800670381130591
+--- !u!1 &201785651084150594
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1810800670381130587}
-  - component: {fileID: 3233197643003323481}
-  - component: {fileID: 1810800670381130585}
-  - component: {fileID: 7611708283123063675}
+  - component: {fileID: 201785651084150598}
+  - component: {fileID: 201785651084150597}
+  - component: {fileID: 201785651084150596}
+  - component: {fileID: 201785651084150595}
   m_Layer: 10
-  m_Name: Trapezoid-Outline-Medium
+  m_Name: Polygon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1810800670381130587
+--- !u!4 &201785651084150598
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810800670381130591}
+  m_GameObject: {fileID: 201785651084150594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -35.57, y: -4.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3233197643003323481
+--- !u!114 &201785651084150597
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810800670381130591}
+  m_GameObject: {fileID: 201785651084150594}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d08fdf17cf61d9449ec47cb389e8416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!120 &1810800670381130585
+--- !u!120 &201785651084150596
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810800670381130591}
+  m_GameObject: {fileID: 201785651084150594}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -88,14 +88,14 @@ LineRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Positions:
-  - {x: 6, y: 2, z: 0}
+  - {x: 0, y: 1, z: 0}
+  - {x: 2, y: 2, z: 0}
+  - {x: 1, y: 0, z: 0}
   - {x: 2, y: -2, z: 0}
+  - {x: 0, y: -1, z: 0}
   - {x: -2, y: -2, z: 0}
-  - {x: -6, y: 2, z: 0}
-  - {x: -5, y: 2, z: 0}
-  - {x: -1.75, y: -1.25, z: 0}
-  - {x: 1.75, y: -1.25, z: 0}
-  - {x: 5, y: 2, z: 0}
+  - {x: -1, y: 0, z: 0}
+  - {x: -2, y: 2, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.2
@@ -143,21 +143,21 @@ LineRenderer:
       m_Mode: 0
       m_NumColorKeys: 3
       m_NumAlphaKeys: 2
-    numCornerVertices: 4
-    numCapVertices: 0
+    numCornerVertices: 8
+    numCapVertices: 6
     alignment: 0
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 1
---- !u!60 &7611708283123063675
+--- !u!60 &201785651084150595
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810800670381130591}
+  m_GameObject: {fileID: 201785651084150594}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -176,8 +176,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.18953705, y: -1.1655765}
-      - {x: -5.801445, y: 1.8850034}
-      - {x: -2.1007845, y: -2.0919523}
-      - {x: 2.0376067, y: -2.1235409}
-      - {x: 5.8014445, y: 1.8850044}
+    - - {x: 0, y: 1}
+      - {x: 2, y: 2}
+      - {x: 1, y: 0}
+      - {x: 2, y: -2}
+      - {x: 0, y: -1}
+      - {x: -2, y: -2}
+      - {x: -1, y: 0}
+      - {x: -2, y: 2}
