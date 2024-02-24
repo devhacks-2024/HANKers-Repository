@@ -33,5 +33,6 @@ public class CardDeck
    public void AddCard (Card c)
    {
       cards.Add(c);
+      c.State = CardState.Deck;
    }
 }

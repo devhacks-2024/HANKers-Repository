@@ -9,22 +9,29 @@ public class PlayerHand
 {
    public const int HAND_LIMIT = 4;
 
+
+   public PlayerEnum Player;
+
    public List<Card> Cards { get; private set; } = new List<Card>();
 
 
-   int nextToDelete = 3;
+   public int DiscardIndex { get; private set; } = 3;
 
    public event Action<PlayerHand> OnHandChanged;
+   public event Action<PlayerHand> OnDiscardIndexChanged;
 
-
+   public PlayerHand (PlayerEnum player)
+   {
+      Player = player;
+   }
 
    public void Add (Card card)
    {
       if (Cards.Count == HAND_LIMIT)
       {
-         var discard = Cards[nextToDelete];
+         var discard = Cards[DiscardIndex];
 
-         Cards[nextToDelete] = card;
+         Cards[DiscardIndex] = card;
 
          CardManager.Instance.Discard(discard);
       }
@@ -52,5 +59,11 @@ public class PlayerHand
       return index < 0 || index >= Cards.Count
          ? new Card()
          : Cards[index];
+   }
+
+   public void IncrementIndex()
+   {
+      DiscardIndex = (DiscardIndex + 1) % HAND_LIMIT;
+      OnDiscardIndexChanged?.Invoke(this);
    }
 }

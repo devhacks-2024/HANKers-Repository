@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2631129208151448193, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: myself
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2360450838192221053, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: m_Mass
@@ -49,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: -944628639613478452, guid: f9c2238dc54be6741b4e79fb2f3b1f91, type: 3}
     - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_ActionId

@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2631129208151448193, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: myself
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2930837581610517343, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: m_Name
@@ -39,6 +39,10 @@ PrefabInstance:
       propertyPath: m_Actions
       value: 
       objectReference: {fileID: -944628639613478452, guid: abc7fbeba45ad014dbc63c4df0704889, type: 3}
+    - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5637614044024042752, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: m_RootOrder
       value: 0

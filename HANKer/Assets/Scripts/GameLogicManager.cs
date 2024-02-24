@@ -73,6 +73,9 @@ namespace Assets.Scripts
 
          p1 = Instantiate(player1Prefab).transform;
          p1.position = positions[0];
+
+         Debug.Log($"p1 {p1}, p1config {p1Config}");
+
          p1Config.Connect(p1.gameObject);
 
 

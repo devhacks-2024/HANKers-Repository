@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeDiscard",
+                    "type": "Button",
+                    "id": "a5150949-427b-4c83-9dd7-7c77af85f75c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -177,17 +186,6 @@
                 },
                 {
                     "name": "",
-                    "id": "c80a51f1-7e80-4457-8b0d-053eae96fba1",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "5c014049-617c-42d3-8e9b-bcbd53bf31c2",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -205,6 +203,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pickup",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f83ca7cf-5f58-4b52-b388-70ee2bd8e402",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeDiscard",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
