@@ -17,8 +17,10 @@ public class Shooter : MonoBehaviour
    [SerializeField] ParticleSystem fireEffect = null;
    [SerializeField] Transform aimIndicator = null;
    [SerializeField] float aimDistance = 5.0f;
-    
-    private AudioSource gunshotAudio; 
+
+   [SerializeField] PlayerEnum player;
+
+   private AudioSource gunshotAudio;
 
    float cooldown = 0;
 
@@ -26,10 +28,15 @@ public class Shooter : MonoBehaviour
    Vector2 lookInput;
    Vector2 mousePosition;
 
+
+   Transform otherPlayer;
+
    private void Start ()
    {
-        gunshotAudio = GetComponent<AudioSource>();
-        cam = FindObjectOfType<Camera>();
+      gunshotAudio = GetComponent<AudioSource>();
+      cam = FindObjectOfType<Camera>();
+
+      otherPlayer = player == PlayerEnum.P1 ? GameLogicManager.Player2 : GameLogicManager.Player1;
    }
 
    private void Update ()
@@ -39,7 +46,7 @@ public class Shooter : MonoBehaviour
          cooldown -= Time.deltaTime;
       }
 
-      lookInput = (mousePosition - (Vector2)transform.position).normalized;
+      lookInput = (otherPlayer.position - transform.position).normalized;
 
       if (aimIndicator)
       {
@@ -47,11 +54,11 @@ public class Shooter : MonoBehaviour
       }
    }
 
-   public void Shoot(Vector2 direction)
+   public void Shoot (Vector2 direction)
    {
       var proj = Instantiate(projectile, transform.position, transform.rotation);
       proj.Fire(direction, damage);
-        gunshotAudio.Play();
+      gunshotAudio.Play();
 
       if (fireEffect)
       {
@@ -59,7 +66,7 @@ public class Shooter : MonoBehaviour
       }
    }
 
-   public void OnFire(InputAction.CallbackContext context)
+   public void OnFire (InputAction.CallbackContext context)
    {
 
       if (context.performed)
@@ -74,11 +81,11 @@ public class Shooter : MonoBehaviour
 
    public void OnLook (InputAction.CallbackContext context)
    {
-      if (context.performed)
-      {
-         var pos = context.ReadValue<Vector2>();
-         mousePosition = cam.ScreenToWorldPoint(pos);
+      //if (context.performed)
+      //{
+      //   var pos = context.ReadValue<Vector2>();
+      //   mousePosition = cam.ScreenToWorldPoint(pos);
 
-      }      
+      //}
    }
 }

@@ -28,8 +28,8 @@ namespace Assets.Scripts
       [SerializeField] PlayerSpawnPoints playerSpawnPoints = null;
       [SerializeField] CardSpawnPoints cardSpawnPoints = null;
 
-      static Transform p1;
-      static Transform p2;
+      public static Transform Player1 { get; private set; }
+      public static Transform Player2 { get; private set; }
 
 
 
@@ -71,22 +71,22 @@ namespace Assets.Scripts
       {
          var positions = playerSpawnPoints.Positions;
 
-         p1 = Instantiate(player1Prefab).transform;
-         p1.position = positions[0];
+         Player1 = Instantiate(player1Prefab).transform;
+         Player1.position = positions[0];
 
-         Debug.Log($"p1 {p1}, p1config {p1Config}");
+         Debug.Log($"p1 {Player1}, p1config {p1Config}");
 
-         p1Config.Connect(p1.gameObject);
+         p1Config.Connect(Player1.gameObject);
 
 
-         p2 = Instantiate(player2Prefab).transform;
-         p2.position = positions[1];
-         p2Config.Connect(p2.gameObject);
+         Player2 = Instantiate(player2Prefab).transform;
+         Player2.position = positions[1];
+         p2Config.Connect(Player2.gameObject);
       }
 
       bool NotNearPlayers(Vector2 v)
       {
-         return Vector2.Distance(v, p1.position) > 2 && Vector2.Distance(v, p2.position) > 2;
+         return Vector2.Distance(v, Player1.position) > 2 && Vector2.Distance(v, Player2.position) > 2;
       }
 
       void SpawnCards ()

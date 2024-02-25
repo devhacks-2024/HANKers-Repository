@@ -38,10 +38,42 @@ PrefabInstance:
     - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: m_Actions
       value: 
-      objectReference: {fileID: -944628639613478452, guid: abc7fbeba45ad014dbc63c4df0704889, type: 3}
+      objectReference: {fileID: -944628639613478452, guid: 9533e5dc9056c8e45a325d22eef74815, type: 3}
     - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 13
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: a5150949-427b-4c83-9dd7-7c77af85f75c
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: Player/ChangeDiscard[/Keyboard/q]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8508881913014492100}
+    - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncrementDiscardIndex
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerPickup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283073969896242350, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5637614044024042752, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: m_RootOrder
@@ -88,8 +120,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6317072753115919053, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+      propertyPath: player
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317072753115919053, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
       propertyPath: projectile
       value: 
       objectReference: {fileID: 2678941898971394982, guid: 206d4e255c9961448aec159e5b44ae27, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+--- !u!114 &8508881913014492100 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2631129208151448193, guid: ebe9c758a446fb44b92811f3b39bac31, type: 3}
+  m_PrefabInstance: {fileID: 3272365306026393275}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfab2d45e4bd6ea48a1cb3e845ad9898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

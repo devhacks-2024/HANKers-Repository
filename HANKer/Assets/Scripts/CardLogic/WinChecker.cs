@@ -19,14 +19,37 @@ public class WinChecker : MonoBehaviour
       var c = c0.Color;
       var t = c0.Type;
 
+      Debug.Log("Comparing to " + c0);
+
       bool win = true;
       for (int i = 0; i < PlayerHand.HAND_LIMIT; i++)
       {
          var card = obj.GetCard (i);
 
-         if (card.Color != c || card.Type != t)
+
+         if (card.Color != c)
          {
             win = false;
+         }
+
+         Debug.Log($"Comparing {card}, win={win}");
+      }
+
+      if (!win)
+      {
+         win = true;
+
+         for (int i = 0; i < PlayerHand.HAND_LIMIT; i++)
+         {
+            var card = obj.GetCard (i);
+
+
+            if (card.Type != t)
+            {
+               win = false;
+            }
+
+            Debug.Log($"Comparing {card}, win={win}");
          }
       }
 
